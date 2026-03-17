@@ -1,0 +1,63 @@
+body {
+  background: pink;
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+h1 {
+  color: #fff;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 8px #e75480;
+}
+.heart {
+  width: 180px;
+  height: 160px;
+  background: red;
+  position: relative;
+  margin-bottom: 40px;
+  animation: pulse 1s infinite;
+  border-radius: 50% 50% 0 0;
+  transform: rotate(-45deg);
+}
+.heart::before,
+.heart::after {
+  content: '';
+  position: absolute;
+  width: 180px;
+  height: 160px;
+  background: red;
+  border-radius: 50%;
+}
+.heart::before {
+  top: -90px;
+  left: 0;
+}
+.heart::after {
+  left: 90px;
+  top: 0;
+}
+@keyframes pulse {
+  0% { transform: scale(1) rotate(-45deg); }
+  50% { transform: scale(1.15) rotate(-45deg); }
+  100% { transform: scale(1) rotate(-45deg); }
+}
+#surpriseBtn {
+  background: red;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 18px 48px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(231,84,128,0.2);
+  transition: background 0.2s;
+}
+#surpriseBtn:hover {
+  background: #e75480;
+}
